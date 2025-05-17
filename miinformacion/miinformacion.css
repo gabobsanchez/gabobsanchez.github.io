@@ -1,0 +1,229 @@
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('fondoAnimado.png');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .carnet {
+        width: 900px;
+        height: 447px;
+        margin: 15vh auto;
+        background-color: rgba(255, 255, 255, 0.583);
+        border: 5px solid #000;
+        border-radius: 40px;
+        padding: 1.7rem;
+        box-shadow: 10px 10px 0 rgba(0,0,0,0.7);
+        animation: fadeIn 1s ease-in-out;
+        position: relative;
+    }
+
+    .carnet__header {
+        text-align: center;
+        border-bottom: 2px solid #000;
+        margin-bottom: 1.5rem;
+    }
+
+    .carnet__header h2 {
+        font-size: 2rem;
+        margin: 0;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .carnet__header p {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .carnet__content {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .carnet__foto {
+        width: 200px;
+        height: 240px;
+        object-fit: cover;
+        border: 2px solid #000;
+        flex-shrink: 0;
+    }
+
+    .carnet__info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .carnet__info p {
+        margin: 0.6rem 0;
+        font-size: 1.4rem;
+        color: #111;
+    }
+
+    .carnet__firma {
+        margin-top: -0.62rem;
+        text-align: center;
+        font-size: 1.3rem;
+        width: 1300px;
+        color: #000000;
+    }
+
+    .firma-img {
+        height: 80px;
+        margin-top: -1rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .carnet__foto-container {
+        position: relative;
+        width: 225px;
+        height: 240px;
+        border: 3px solid #000;
+        overflow: hidden;
+    }
+
+    .foto {
+        position: absolute;
+        width: 100%;    
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+    }
+
+    .foto2 {
+        opacity: 0;
+    }
+
+    .carnet__foto-container:hover .foto2 {
+        opacity: 1;
+    }
+
+    .carnet__foto-container:hover .foto1 {
+        opacity: 0;
+    }
+
+    /* Redes sociales SVG personalizadas */
+    /* Redes sociales */
+    .redes-sociales {
+        position: absolute;
+        height: 53.5px;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        color: #111;
+    }
+
+    .redes-sociales p {
+        margin: 0 0 0.5rem 0;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .icons-social-media {
+        width: 32px;
+        height: 32px;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+    }
+
+    .icons-social-media:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Redes sociales */
+    .redes-sociales {
+        position: absolute;
+        bottom: 4.5rem;
+        left: 2.2rem;
+        color: #111;
+    }
+
+    .redes-sociales p {
+        margin: 0 0 0.5rem 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .icons-social-media {
+        width: 32px;
+        height: 32px;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        border-radius: 20%;
+    }
+
+    .icons-social-media:hover {
+        transform: translateY(-5px);
+    }
+
+    #instagram:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    #twitch:hover {
+        background-color: #9147ff;
+    }
+
+    #youtube:hover {
+        background-color: #ff0000;
+    }
+
+    #whatsapp:hover {
+        background-color: #25d366;
+    }
+
+    #tiktok:hover {
+        background-color: #fcfcfc;
+    }
+
+    /* Estilo para la imagen de Kick (mismo tamaño y efectos que los SVG) */
+    .kick-img {
+        width: 32px !important;       /* Mismo ancho que los SVG */
+        height: 32px !important;      /* Mismo alto */
+        padding: 5px;                 /* Mismo padding */
+        object-fit: contain;          /* Asegura que la imagen no se distorsione */
+        transition: all 0.3s ease-in-out;
+        border-radius: 20%;           /* Para el efecto circular al hacer hover */
+    }
+
+    .kick-img:hover {
+        transform: translateY(-5px);  /* Misma animación que los demás */
+        background-color: #02ff13;    /* Verde neón de Kick al hacer hover */
+
+    }
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aventura Digital</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <!-- Fondo con imagen -->
+    <div class="background"></div>
+    
+    <!-- Menú principal -->
+    <div id="menu" class="button-stack" style="display: none;">
+        <a href="miinformacion/miinformacion.html" class="button">Mi Información</a>
+        <a href="contactor/contactos.html" class="button secondary">Contactos</a>
+        <a href="creditos/creditos.html" class="button accent">Créditos</a>
+    </div>
+    
+    <!-- Audio -->
+    <audio id="backgroundAudio" loop>
+        <source src="pichi.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Consentimiento -->
+    <div class="brutalist-card" id="consentCard">
+        <div class="brutalist-card__header">
+            <div class="brutalist-card__icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                </svg>
+            </div>
+            <div class="brutalist-card__alert">ATENCION...!</div>
+        </div>
+        <div class="brutalist-card__message">
+            Para mayor entretenimiento, se activara el sonido una vez presionado el botón. ¿Estas Listo?
+        </div>
+        <div class="brutalist-card__actions">
+            <a class="brutalist-card__button brutalist-card__button--mark" href="informacion.html">Mas informacion</a>
+            <button class="brutalist-card__button brutalist-card__button--read" id="acceptAudio">¡Estoy listo!</button>
+        </div>
+    </div>
+    
+    <!-- Botones superiores -->
+    <div class="button-top-right">
+        <a href="#" class="button large-button">
+            ANIVERSARIO
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+            </svg>
+        </a>
+        <a href="#" class="button large-button dynamic-button">
+            DINÁMICA DE HOY
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Botones inferiores -->
+    <div class="bottom-buttons">
+        <div id="home-button" class="button home-btn-square" style="display: none;">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </div>
+        <div id="stories-button" class="button stories-btn" style="display: none;">
+            Historias
+        </div>
+    </div>
+
+    <!-- Panel de Historias -->
+    <div id="stories-panel" class="stories-panel" style="display: none;">
+        <div class="stories-panel-header">
+            <h3>Historias Compartidas</h3>
+            <button id="close-stories" class="close-btn">&times;</button>
+        </div>
+        <div id="stories-container" class="stories-container">
+            <!-- Las historias aparecerán aquí -->
+        </div>
+    </div>
+
+    <!-- Dinámica de Hoy -->
+    <div class="brutalist-card" id="dynamicCard" style="display: none;">
+        <div class="brutalist-card__header">
+            <div class="brutalist-card__icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                </svg>
+            </div>
+            <div class="brutalist-card__alert">DINÁMICA DE HOY</div>
+        </div>
+        <div class="brutalist-card__message">
+            Descripción de la dinámica actual. ¡Comparte tu experiencia con nosotros!
+        </div>
+        <div class="brutalist-card__form">
+            <div class="form-title">Cuenta tu historia:</div>
+            <textarea id="storyInput" placeholder="Escribe aquí tu respuesta..."></textarea>
+            <div class="brutalist-card__actions">
+                <button class="brutalist-card__button brutalist-card__button--read" id="submitStory">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animación de círculo -->
+    <div id="circle-overlay"></div>
+
+    <!-- Video -->
+    <div id="video-container" style="display: none;">
+        <video id="fullscreen-video" controls style="width: 100%; height: 100%;"></video>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
